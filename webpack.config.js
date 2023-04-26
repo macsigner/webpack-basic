@@ -1,5 +1,6 @@
 import * as path from 'path';
 import {fileURLToPath} from 'url';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -24,7 +25,7 @@ const settings = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ],
@@ -32,6 +33,7 @@ const settings = {
         ],
     },
     plugins: [
+        new MiniCssExtractPlugin(),
         ...pages.reduce((prev, current) => {
             return [...prev, new HtmlWebpackPlugin({
                 template: current,
