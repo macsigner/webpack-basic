@@ -6,7 +6,7 @@ const prodSettings = merge(settings, {
     mode: 'production',
     plugins: [
         new CleanWebpackPlugin(),
-    ]
-})
+    ],
+});
 
 export default prodSettings;
