@@ -10,17 +10,17 @@ const pages = [
 const settings = {
     mode: 'development',
     entry: './src/js/main.js',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        }
+    },
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'src/pages/index.html',
-        }),
         ...pages.reduce((prev, current) => {
-            console.log(prev);
-            console.log(current);
             return [...prev, new HtmlWebpackPlugin({
                 template: current,
             })];
@@ -28,5 +28,4 @@ const settings = {
     ]
 };
 
-console.log(settings.plugins);
 export default settings;
