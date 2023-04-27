@@ -30,6 +30,45 @@ const settings = {
                     "sass-loader",
                 ],
             },
+            {
+                test: /\.(png|jpe?g|webp|tiff?)$/i,
+                oneOf: [
+                    {
+                        resourceQuery: /srcset/,
+                        use: [
+                            {
+                                loader: "webpack-image-srcset-loader",
+                                options: {
+                                    esModule: false,
+                                    sizes: [
+                                        "375w",
+                                        "480w",
+                                        "600w",
+                                        "900w",
+                                        "1200w",
+                                        "1920w",
+                                        "2560w",
+                                    ],
+                                },
+                            },
+                            "file-loader",
+                            "webpack-image-resize-loader",
+                            // add webpack-sharp-loader if you want to pre-process your image e.g. rotating, flipping
+                        ],
+                    },
+                    {
+                        // if no previous resourceQuery match
+                        use: [
+                            {
+                                loader: "file-loader",
+                                options: {
+                                    esModule: false,
+                                }
+                            }
+                        ],
+                    },
+                ],
+            }
         ],
     },
     plugins: [
