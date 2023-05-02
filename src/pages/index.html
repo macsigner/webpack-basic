@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test</title>
 </head>
 <body>
 <main>
-    <img src="<%= require('/src/images/demo_1.png') %>" srcset="<%= require('/src/images/demo_1.png?srcset') %>" alt="Some demo image to show srcset attribute" width="1552" height="989">
+    <img src="<%= require('/src/images/demo_1.png') %>"
+         srcset="<%= require('/src/images/demo_1.png?srcset') %>"
+         alt="Some demo image to show srcset attribute"
+         width="1552"
+         height="989">
 </main>
 </body>
 </html>
