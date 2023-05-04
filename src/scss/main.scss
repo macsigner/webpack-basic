@@ -1,23 +1,2 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    padding: 6px;
-}
-
-img,
-svg,
-iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-body {
-    background-color: beige;
-    background-image: url('../images/demo_2.png');
-}
-
-body > main {
-    max-width: 800px;
-    margin: 0 auto;
-}
+@import 'includes/settings/settings_font_face';
+@import 'includes/base';

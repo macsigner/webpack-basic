@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 6px;
+}
+
+img,
+svg,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    background-color: beige;
+    background-image: url('../images/demo_2.png');
+}
+
+body > main {
+    max-width: 800px;
+    margin: 0 auto;
+}

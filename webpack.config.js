@@ -17,7 +17,7 @@ const settings = {
         }
     },
     output: {
-        filename: 'main.js',
+        filename: '[name]-[hash].js',
         path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: 'assets/[name]-[hash][ext]'
     },
@@ -37,11 +37,20 @@ const settings = {
                 generator: {
                     filename: 'assets/img/[name]-[hash][ext]'
                 },
-            }
+            },
+            {
+                test: /\.(woff|woff2)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name]-[hash][ext]'
+                },
+            },
         ],
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'assets/css/[name]-[hash].css'
+        }),
         ...pages.reduce((prev, current) => {
             return [...prev, new HtmlWebpackPlugin({
                 template: current,
