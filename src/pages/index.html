@@ -9,10 +9,11 @@
 <body>
 <main>
     <img src="<%= require('/src/images/demo_1.png') %>"
-         srcset="<%= require('/src/images/demo_1.png?srcset') %>"
+         srcset="<%= require('../images/demo_1.png') %>"
          alt="Some demo image to show srcset attribute"
          width="1552"
          height="989">
+    <img src="<%= require('/src/images/demo_1.png') %>">
 </main>
 </body>
 </html>
